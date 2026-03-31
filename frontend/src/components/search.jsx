@@ -4,7 +4,7 @@ function Search() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [hasSearched, setHasSearched] = useState(false); // ✅ NEW
+  const [hasSearched, setHasSearched] = useState(false);
 
 
   const handleSearch = async () => {
