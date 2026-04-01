@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
-function Search() {
+const Search = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
-
 
   const handleSearch = async () => {
     if (!query.trim()) {
@@ -14,8 +13,7 @@ function Search() {
     }
 
     setLoading(true);
-        setHasSearched(true);
-
+    setHasSearched(true);
 
     try {
       const response = await fetch(`/api/search?query=${query}`);
@@ -26,7 +24,6 @@ function Search() {
       } else {
         setResults([]);
       }
-
     } catch (error) {
       console.error("Error:", error);
       setResults([]);
@@ -63,6 +60,6 @@ function Search() {
       </ul>
     </div>
   );
-}
+};
 
 export default Search;
